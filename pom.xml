@@ -10,47 +10,39 @@
 
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
-    <artifactId>WEBJAR_ID</artifactId>
-    <version>UPSTREAM_VERSION-SNAPSHOT</version>
-    <name>WEBJAR_NAME</name>
-    <description>WebJar for WEBJAR_NAME</description>
+    <artifactId>sockjs-client</artifactId>
+    <version>0.3.4-SNAPSHOT</version>
+    <name>SockJS-client</name>
+    <description>WebJar for SockJS-client</description>
     <url>http://webjars.org</url>
 
     <developers>
         <developer>
-            <id>YOUR_ID</id>
-            <name>YOUR_NAME</name>
-            <email>YOUR_EMAIL</email>
+            <id>jamesward</id>
+            <name>James Ward</name>
+            <email>james@jamesward.com</email>
         </developer>
     </developers>
 
     <licenses>
         <license>
-            <name>UPSTREAM_LICENSE_NAME</name>
-            <url>UPSTREAM_LICENSE_VERSION</url>
+            <name>MIT</name>
+            <url>https://github.com/sockjs/sockjs-client/blob/master/LICENSE-MIT-SockJS</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <scm>
-        <url>http://github.com/webjars/WEBJAR_ID</url>
-        <connection>scm:git:https://github.com/webjars/WEBJAR_ID.git</connection>
-        <developerConnection>scm:git:https://github.com/webjars/WEBJAR_ID.git</developerConnection>
+        <url>http://github.com/webjars/sockjs-client</url>
+        <connection>scm:git:https://github.com/webjars/sockjs-client.git</connection>
+        <developerConnection>scm:git:https://github.com/webjars/sockjs-client.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
     
-    <dependencies>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>ANOTHER_WEBJAR_ID</artifactId>
-            <version>ANOTHER_WEBJAR_VERSION</version>
-        </dependency>
-    </dependencies>
-    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>UPSTREAM_VERSION</upstream.version>
-        <upstream.url>UPSTREAM_URL</upstream.url>
+        <upstream.version>0.3.4</upstream.version>
+        <upstream.url>http://cdn.sockjs.org/</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
     
@@ -69,8 +61,8 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>WEBJAR_ID.js</fromFile>
-                            <toDir>${destDir}</toDir>
+                            <fromFile>sockjs-${upstream.version}.js</fromFile>
+                            <toFile>${destDir}/sockjs.js</toFile>
                         </configuration>
                     </execution>
                     <execution>
@@ -81,8 +73,8 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>WEBJAR_ID.min.js</fromFile>
-                            <toDir>${destDir}</toDir>
+                            <fromFile>sockjs-${upstream.version}.min.js</fromFile>
+                            <toFile>${destDir}/sockjs.min.js</toFile>
                         </configuration>
                     </execution>
                 </executions>
@@ -91,7 +83,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>2.4.1</version>
             </plugin>
         </plugins>
     </build>
