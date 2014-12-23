@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>sockjs-client</artifactId>
-    <version>0.3.4-1-SNAPSHOT</version>
+    <version>0.3.4-1</version>
     <name>SockJS-client</name>
     <description>WebJar for SockJS-client</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/sockjs-client</url>
         <connection>scm:git:https://github.com/webjars/sockjs-client.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/sockjs-client.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>sockjs-client-0.3.4-1</tag>
     </scm>
     
     <properties>
