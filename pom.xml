@@ -42,7 +42,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <upstream.version>1.0.0</upstream.version>
-        <upstream.url>http://cdn.sockjs.org/</upstream.url>
+        <upstream.url>https://github.com/sockjs/sockjs-client/releases/download/v${upstream.version}</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
             {
