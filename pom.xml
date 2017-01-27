@@ -46,9 +46,9 @@
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
             {
-            "paths": {
-            "sockjs-client": "sockjs"
-            }
+                "paths": {
+                    "sockjs-client": "sockjs"
+                }
             }
         </requirejs>
     </properties>
