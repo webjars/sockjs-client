@@ -41,8 +41,8 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>1.1.1</upstream.version>
-        <upstream.url>https://raw.githubusercontent.com/sockjs/sockjs-client/master/dist</upstream.url>
+        <upstream.version>1.1.2</upstream.version>
+        <upstream.url>https://raw.githubusercontent.com/sockjs/sockjs-client/v${upstream.version}/dist</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
             {
@@ -68,8 +68,20 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>sockjs-${upstream.version}.js</fromFile>
+                            <fromFile>sockjs.js</fromFile>
                             <toFile>${destDir}/sockjs.js</toFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>download-full-js-map</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>download-single</goal>
+                        </goals>
+                        <configuration>
+                            <url>${upstream.url}</url>
+                            <fromFile>sockjs.js.map</fromFile>
+                            <toFile>${destDir}/sockjs.js.map</toFile>
                         </configuration>
                     </execution>
                     <execution>
@@ -80,8 +92,20 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>sockjs-${upstream.version}.min.js</fromFile>
+                            <fromFile>sockjs.min.js</fromFile>
                             <toFile>${destDir}/sockjs.min.js</toFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>download-min-js-map</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>download-single</goal>
+                        </goals>
+                        <configuration>
+                            <url>${upstream.url}</url>
+                            <fromFile>sockjs.min.js.map</fromFile>
+                            <toFile>${destDir}/sockjs.min.js.map</toFile>
                         </configuration>
                     </execution>
                 </executions>
